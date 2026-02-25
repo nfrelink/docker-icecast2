@@ -24,7 +24,7 @@ jobs:
         include:
           - base_image: ubuntu:rolling
             tag: latest
-          - base_image: ubuntu:devel
+          - base_image: debian:sid
             tag: dev
 
     steps:
