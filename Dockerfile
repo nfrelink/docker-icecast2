@@ -1,4 +1,5 @@
-FROM ubuntu:rolling
+ARG BASE_IMAGE=ubuntu:rolling
+FROM ${BASE_IMAGE}
 
 # install icecast2 and enable its autostart
 RUN apt-get update && apt-get upgrade -y && \
