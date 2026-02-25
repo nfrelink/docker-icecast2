@@ -1,7 +1,4 @@
-FROM ubuntu:focal
-
-LABEL maintainer="Kirill Plotnikov <init@pltnk.dev>" \
-      github="https://github.com/pltnk/docker-icecast2"
+FROM ubuntu:latest
 
 # install icecast2 and enable its autostart
 RUN apt update && apt upgrade -y && \
