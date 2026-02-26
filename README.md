@@ -12,11 +12,9 @@ Works well with containerized [Liquidsoap](https://www.liquidsoap.info/): [pltnk
 
 ### Installation
 - Pull the image from one of public Docker registries
-  - Docker Hub `docker pull pltnk/icecast2`
-  - GitHub Packages `docker pull ghcr.io/pltnk/icecast2`
-  - Quay.io `docker pull quay.io/pltnk/icecast2`
+  - GitHub Packages `docker pull ghcr.io/nfrelink/icecast2`
 - Build the image yourself
-  - `docker build -t pltnk/icecast2 github.com/pltnk/docker-icecast2`
+  - `docker build -t nfrelink/icecast2 github.com/nfrelink/docker-icecast2`
 
 ### Configuration
 - Mount your icecast.xml to `/etc/icecast2/icecast.xml`
@@ -27,16 +25,17 @@ Works well with containerized [Liquidsoap](https://www.liquidsoap.info/): [pltnk
 docker run --name icecast2 -d --restart=always \
 --publish 8000:8000 \
 --volume /path/to/your/icecast.xml:/etc/icecast2/icecast.xml \
-pltnk/icecast2
+ghcr.io/nfrelink/icecast2
 ```
 #### docker-compose.yml
 ```
-icecast2:
-  image: pltnk/icecast2
-  container_name: icecast2
-  restart: always
-  ports:
-    - 8000:8000
-  volumes:
-    - /path/to/your/icecast.xml:/etc/icecast2/icecast.xml
+services:
+  icecast2:
+    image: ghcr.io/nfrelink/icecast2
+    container_name: icecast2
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - /path/to/your/icecast.xml:/etc/icecast2/icecast.xml
 ```

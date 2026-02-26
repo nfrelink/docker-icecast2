@@ -24,7 +24,7 @@ jobs:
         include:
           - base_image: ubuntu:rolling
             tag: latest
-          - base_image: debian:sid
+          - base_image: debian:sid-slim
             tag: dev
 
     steps:
